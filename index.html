@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+        <h1> Mi Curriculum Vitae</h1>
         <h1>Jared Gonzalez</h1>
         <nav>
             <ul>
@@ -26,11 +27,19 @@
         <section id="perfil">
             <h2>Perfil Profesional</h2>
             <p>Descripción breve sobre ti, tus intereses profesionales y fortalezas.</p>
+            <img src="Perfil.jpeg" 
+            style="object-fit: cover; border-radius: 50%; border: 2px solid #ccc;"
+            alt="Foto de perfil" 
+            width="200">
         </section>
 
         <section id="experiencia">
             <h2>Experiencia Laboral</h2>
-            <p>Detalle de tus trabajos anteriores, responsabilidades y logros.</p>
+            <article>
+            <p><strong>Santa Priscila</strong><br>
+            Pasante de Desarrollo Web.<br>
+            Responsable del desarrollo del modulo de Logisitica del ERP</p>
+            </article>
         </section>
 
         <section id="educacion">
@@ -40,12 +49,97 @@
 
         <section id="habilidades">
             <h2>Habilidades</h2>
-            <p>Lista de habilidades técnicas y blandas relevantes para tu perfil.</p>
+            <ul>
+            <li>HTML y CSS</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>Laravel</li>
+            <li>Vue, Bootstrap</li>
+            <li>Python</li>
+            </ul>
         </section>
 
         <section id="contacto">
             <h2>Información de Contacto</h2>
             <p>Correo electrónico, teléfono y enlaces a redes profesionales.</p>
+            <p>Escuela Superior Politécnica del Litoral, Guayaquil - Ecuador</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.9122831056047!2d-79.96899473045196!3d-2.1477626997239364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6dcbef9c9389%3A0x5d56a4e07c5dbcef!2sESPOL%20-%20Escuela%20Superior%20Polit%C3%A9cnica%20del%20Litoral!5e0!3m2!1ses!2sec!4v1716127151234!5m2!1ses!2sec" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            
+        </section>
+        <section id = "formulario">
+            <form action="/submit" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <div></div>
+
+            <label for="pais">País:</label>
+            <select id="pais" name="pais" required>
+            <option value="">Seleccione una opción</option>
+            <option value="mexico">México</option>
+            <option value="espana">España</option>
+            <option value="argentina">Argentina</option>
+            </select>
+
+            <div></div>
+
+            <span>Género:</span>
+            <label>
+            <input type="radio" name="genero" value="masculino" required> Masculino
+            </label>
+            <label>
+            <input type="radio" name="genero" value="femenino" required> Femenino
+            </label>
+            <label>
+            <input type="radio" name="genero" value="otro" required> Otro
+            </label>
+
+            <div></div>
+
+            <span>Intereses:</span>
+            <label>
+            <input type="checkbox" name="intereses" value="lectura" required> Lectura
+            </label>
+            <label>
+            <input type="checkbox" name="intereses" value="musica" required> Música
+            </label>
+            <label>
+            <input type="checkbox" name="intereses" value="deporte" required> Deporte
+            </label>
+
+            <div></div>
+
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="40" required></textarea>
+
+            <div></div>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+        </section>
+                <section id="referncias">
+            <h2>Referencias Laborales</h2>
+            <article>
+            <blockquote>"Demostró liderazgo técnico en cada etapa del proyecto."</blockquote>
+            <p><span>Marcos del Rosario</span><br>
+            <span>Líder de Proyectos en Santa Priscila.</span>
+            Responsable del desarrollo del modulo de Logisitica del ERP</p>
+            </article>
+            <article>
+            <blockquote>"Demostró liderazgo técnico en cada etapa del proyecto."</blockquote>
+            <p><span>Jefferson Davalos</span>
+            <span>Desarrollador Fullstack en Ambiensa.</span>
+            Responsable del desarrollo del modulo de Logisitica del ERP</p>
+            </article>
         </section>
     </main>
 
