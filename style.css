@@ -21,7 +21,8 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   background: 
-    linear-gradient(180deg,#0c0a0f 50%, #2d2dded6 60%, #2d2ddeb3 70%,#000000 90%)
+    linear-gradient(180deg,#000000 50%, #2d2dded6 60%, #2d2ddeb3 70%,#000000 90%);
+  z-index:11;
 }
 
 nav {
@@ -29,9 +30,10 @@ nav {
   padding: 1rem clamp(1rem, 3vw, 3rem);
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 0;
   left: 0;
+  margin-bottom: 10rem;
 }
 
 ul.navbar {
@@ -64,12 +66,12 @@ ul.navbar {
   flex: 0.5;
    margin: 0.5rem clamp(1rem, 5vw, 5rem);
   text-align: center;
-  border: 5px solid transparent;
   border-radius: 10px;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 1rem;
+  border: 5px solid transparent;
   background: 
     linear-gradient(black, black) padding-box, 
-    linear-gradient(to right, #5b43c4, #2d2dde) border-box;
+    linear-gradient(to right, #6366f1, #a855f7) border-box;
   transition: all 0.3s ease;
   min-width: max-content;
 }
@@ -87,11 +89,11 @@ ul.navbar {
 }
 
 #nav-name {
-  font-family: "JetBrains Mono";
-  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
   font-weight: 900;
   letter-spacing: 0.15rem;
-  background: linear-gradient(to right, #5b43c4, #2d2dde);
+  background: linear-gradient(to right,  #6366f1, #a855f7);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -116,7 +118,11 @@ ul.navbar {
 
 .nav-options:hover,
 .nav-options:active {
-  color: #1c4686;
+  background: linear-gradient(to right,  #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
   transform: translateY(3px);
 }
 
@@ -127,7 +133,9 @@ ul.navbar {
   left: 0;
   width: 0;
   height: 3px;
-  background: #1c4686;
+  border: 1px solid transparent;
+  background: 
+    linear-gradient(to right, #6366f1, #a855f7) ;
   transition: width 0.3s ease;
 }
 
@@ -135,13 +143,99 @@ ul.navbar {
   width: 100%;
 }
 
+#home{
+  background-image: url(img/supawork-27dbdbc9ea9241c8ab7645d6ad2cb48c.gif); /* Opcional: hace que la imagen cubra todo el área */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  position: relative;
+  margin: 0;
+  right:0;
+}
+
+.home-content {
+  position: relative;
+  bottom: 1;
+  margin-left: 5.5em;
+  margin-right: 5em;
+}
+
+.home-content > p:last-of-type {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color:rgba(255, 255, 255, 0.671)
+}
+
+.home-content > h3{
+  color: white;
+  border: 6px solid transparent;
+  border-radius: 12px; 
+  text-align: center;
+  margin: 2rem auto;
+  background: 
+    linear-gradient(transparent, transparent) padding-box, 
+    linear-gradient(to right, #6366f1, #a855f7) border-box; 
+}
+
+.home-content > h1 {
+  font-size: 4rem;
+  font-family: "JetBrains Mono";
+  font-weight: bold;
+  margin-left: 2.7rem;
+  background: linear-gradient(to right, #6366f1, #a855f7);
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent; 
+}
+
+.home-content > p:first-of-type{
+  color:white;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.home-content a {
+  display: inline-block;
+  filter: 
+    drop-shadow(0 0 5px #5b43c4)
+    drop-shadow(0 0 10px #2d2dde);
+  transition: all 0.3s ease;
+  border-radius: 50%; 
+}
+
+.home-content a:hover {
+  filter: 
+    drop-shadow(0 0 10px #5b43c4)
+    drop-shadow(0 0 15px #2d2dde);
+  transform: translateY(-5px);
+}
+
+
+#photo {
+  width: 32vw;
+  max-width: 40%; 
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 20px #6366f1);
+  position: relative;
+  right: 2em;
+}
+
+#photo:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 30px #6366f1);
+}
+
+
 .animated-text {
   font-family: "JetBrains Mono";
   font-size: 2.5rem;
   color: white; 
   font-weight: 900;
   overflow: hidden; 
-  border-right: 20px solid #2828ccda; 
+  border-right: 20px solid #6366f1; 
   white-space: nowrap;
   padding-right: 15px;
   animation: 
@@ -158,7 +252,7 @@ ul.navbar {
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #2828ccda }
+  50% { border-color: #6366f1 }
 }
 
 a {
@@ -166,104 +260,6 @@ a {
   display: inline-block;
   transition: transform 0.3s ease; 
 }
-
-
-
-#home{
-  background-image: url(img/XzZg.gif);
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
-  position: relative;
-  margin: 0;
-  right:0;
-}
-
-.home-content {
-  margin-left: 2.5em;
-  margin-right: 3.5em;
-}
-
-.home-content > p:last-of-type {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  color:rgba(255, 255, 255, 0.671)
-  
-}
-
-.home-content > h3{
-  color: white;
-  border: 6px solid transparent;
-  border-radius: 12px; 
-  text-align: center;
-  margin: 2rem auto;
-  background: 
-    linear-gradient(transparent, transparent) padding-box, 
-    linear-gradient(to right, #5b43c4, #2d2dde) border-box; 
-}
-
-.home-content > h1 {
-  font-size: 5rem;
-  font-family: "JetBrains Mono";
-  font-weight: bold;
-  margin-left: 2.5rem;
-  background: linear-gradient(to right, #5b43c4, #2d2dde);
-  -webkit-background-clip: text; 
-  background-clip: text; 
-  color: transparent; 
-}
-
-.home-content > p:first-of-type{
-  color:white;
-  font-weight: 800;
-  font-size: 2rem;
-}
-
-#photo {
-    filter: drop-shadow(0 0 20px #2a2a9d);
-    position: relative;
-    right: 40px;
-    width: 40%;
-    transition: all 0.3s ease;
-}
-
-#photo:hover {
-    transform: scale(1.03);
-    filter: drop-shadow(0 0 30px #2a2a9d);
-}
-
-.subtitle {
-    color:white;
-    text-transform: uppercase;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #contact {
@@ -278,25 +274,33 @@ a {
   margin: 0 auto;
 }
 
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.15rem;
+  background: linear-gradient(to right,  #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: center;
+  color: transparent;
+  white-space: nowrap;
+  margin-bottom: 2rem;
+}
+
 #contact h2 {
   grid-column: 1/3;
-  font-size: 1.2rem;
 }
 #contact p {
   font-size: 1rem;
   margin: 0 ;
 
 }
-#contact .subtitle {
-  font-size: 2.5rem;
-  color: #5b43c4;
-  margin-bottom: 2rem;
-  text-align: center;
-}
 
 #contact .subtitle img {
   height: 40px;
   width: auto;
+  
 }
 
 #contact p {
@@ -315,23 +319,24 @@ a {
   transform: translateY(-5px) scale(1.1);
 }
 
-#contact svg {
-  width: 40px;
-  height: 40px;
-  fill: white;
+.contactme svg {
+  width: 28px;
+  height: 28px;
   transform: rotate(360deg);
+  margin-top: 30px;
   transition: fill 0.3s ease;
+  fill: #5b43c4;
+  position: relative;
+  top: 4px;
+}
+#contact p {
+  text-align: center;
+  font-size: 1rem;
+  gap: 2px;
+  color: white;
+  font-weight: 400;
 }
 
-#contact svg:last-of-type {
-  width: 40px;
-  height: 40px;
-  fill: #5b43c4;
-}
-
-#contact a:hover svg {
-  fill: #5b43c4;
-}
 
 #contact iframe {
   width: 100%;
@@ -421,14 +426,14 @@ textarea::placeholder {
   color: white;
   border: none;
   padding: 1rem 2rem;
+  column-span: 3;
   font-size: 1.3rem;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 1.5rem;
 }
 
 #formulario button:hover {
@@ -439,11 +444,6 @@ textarea::placeholder {
 #referencias {
   margin-top: 3rem;
   grid-column: 1 / 3;
-}
-
-#referencias .subtitle {
-  color: #5b43c4;
-  margin-bottom: 2rem;
 }
 
 #referencias article {
@@ -507,7 +507,7 @@ footer p:first-of-type{
 }
 
 section {
-  background-color: #3498db;
+  background-color:rgba(28, 22, 46, 0.786);
   margin: 4em 2em 1em 2em;
   padding: 1.5% 0.8%;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -515,108 +515,29 @@ section {
 
 footer {
   width:100%;
-  height: 18vh;
-  background-size: cover;
-  background-image: url(img/background3.jpg);
-  background-position: center 6%;
+  height: 19vh;
+  background-image: url(img/GIF\ by\ Chandelier\ Creative\ \(1\).gif);
+  background-size: 550px;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  filter:
+    hue-rotate(240deg)
+    saturate(1.5)
+    brightness(0.9);
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
-  border-top: 2px solid #5b43c4;
 }
 
 
 
 /* Estilo principal para la sección About */
 #about {
-  background-color: rgba(6, 5, 10, 0.95);
+  background-color: transparent;
   color: white;
-  padding: 4rem 2rem;
-  border-top: 1px solid #5b43c4;
-  border-bottom: 1px solid #5b43c4;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#about .subtitle {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(to right, #5b43c4, #2d2dde);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-#about .subtitle::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
+  padding: 2rem 4rem;
   width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, #5b43c4, #2d2dde);
-}
-
-/* Estilos para experiencia laboral */
-#experiencia {
-  margin-bottom: 3rem;
-}
-
-#experiencia article {
-  background: rgba(28, 22, 46, 0.7);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #5b43c4;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#experiencia article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(91, 67, 196, 0.2);
-}
-
-#experiencia strong {
-  font-size: 1.3rem;
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #5b43c4;
-}
-
-/* Estilos para formación académica */
-#educacion {
-  margin-bottom: 3rem;
-}
-
-#educacion span {
-  display: block;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
-  color: #5b43c4;
-}
-
-#educacion p {
-  margin-left: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px dashed #5b43c4;
-  color: #e0e0e0;
-}
-
-/* Estilos para habilidades con SVG */
-#habilidades {
-  margin-top: 3rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin: 0 auto;
 }
 
 .skill-item {
@@ -647,66 +568,3 @@ footer {
   text-align: center;
 }
 
-
-/* Media Queries para responsive */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 1rem 0.5rem;
-  }
-  
-  .nav-brand {
-    order: 1;
-    margin-bottom: 1rem;
-    text-align: center;
-    flex: 1 1 100%;
-    flex-wrap: nowrap;
-  }
-  
-  .nav-links {
-    order: 3;
-    flex: 1 1 100%;
-    margin: 1rem 0;
-    gap: 15px;
-  }
-  
-  .nav-button {
-    order: 2;
-    margin: 0.5rem auto;
-    flex: 0 1 auto;
-  }
-  
-  .nav-options {
-    font-size: 1rem;
-    padding: 0.3rem 0;
-  }
-  
-  .nav-options:hover {
-    transform: translateY(2px);
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .nav-options {
-    font-size: 0.9rem;
-  }
-  
-  .nav-button {
-    padding: 0.4rem 1.5rem;
-  }
-  
-  #nav-name {
-    font-size: 1.3rem;
-  }
-  
-  #nav-logo {
-    width: 35px;
-    height: 35px;
-  }
-}
