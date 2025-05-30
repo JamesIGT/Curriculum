@@ -207,7 +207,7 @@ ul.navbar {
 .home-content > p:last-of-type {
   font-size: clamp(1rem, 3vw, 1.3rem);
   margin-bottom: 2rem;
-  color:rgba(255, 255, 255, 0.)
+  color:rgba(255, 255, 255, 0.7)
 }
 
 .home-content > h3{
@@ -751,7 +751,49 @@ tbody{
   transition: transform 0.3s ease;
 }
 
+.btn-code{
+  background: linear-gradient(135deg, #5b43c4, #2d2dde);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+} 
+.btn-code:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(91, 67, 196, 0.4);
+}
 
+.project-links{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.btn-demo {
+  background: linear-gradient(135deg, #5b43c4, #2d2dde);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-demo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(91, 67, 196, 0.4);
+}
+
+.tech-icon img {
+  width: 50px;
+  height: 50px;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+.tech-icon img:hover {
+  transform: scale(1.1);
+}
 
 footer {
   width:100%;
