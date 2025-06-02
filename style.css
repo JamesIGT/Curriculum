@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 body::before {
   content: '';
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-image: url('img/supawork-27dbdbc9ea9241c8ab7645d6ad2cb48c.gif');
   background-position: center;
@@ -32,7 +33,7 @@ body::after {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background:
     linear-gradient(180deg,#000000 50%, #2d2dded6 60%, #2d2ddeb3 70%,#000000 90%);
@@ -40,19 +41,18 @@ body::after {
   z-index: -1;
 }
 
-nav {
+#navbar {
+  z-index: 1000;
   background: #000000;
   padding: 1rem clamp(1rem, 3vw, 3rem);
   width: 100%;
   position: fixed;
   display: block;
-  z-index: 100;
   top: 0;
   left: 0;
-
 }
 
-ul.navbar {
+#navbar ul {
   list-style: none;
   display: flex;
   align-items: center;
@@ -70,7 +70,6 @@ ul.navbar {
   gap: clamp(20px, 3vw, 40px);
   justify-content: center;
   flex: 2.5;
-  margin-top: 0.90rem;
   flex-wrap: wrap;
 }
 
@@ -80,7 +79,7 @@ ul.navbar {
 
 .nav-button {
   flex: 0.5;
-   margin: 0.5rem clamp(1rem, 5vw, 5rem);
+  margin: 0 auto;
   text-align: center;
   border-radius: 10px;
   padding: 0.25rem 1rem;
@@ -99,7 +98,7 @@ ul.navbar {
 
 .nav-follow{
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: white;
   font-weight: 700;
   padding: 0px;
@@ -107,7 +106,7 @@ ul.navbar {
 
 #nav-name {
   font-family: "Inter", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: 0.15rem;
   background: linear-gradient(to right,  #6366f1, #a855f7);
@@ -129,7 +128,7 @@ ul.navbar {
   margin-left: 1rem;
   font-weight: 700;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   flex-wrap: wrap;
 }
 
@@ -160,49 +159,17 @@ ul.navbar {
   width: 100%;
 }
 
-#home{
-  background: transparent;
+#welcome-section {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
-  margin: 0 auto;
+  justify-content: space-between;
+  column-gap: 2rem;
+  padding: clamp(2rem, 5vw, 4rem);
 }
 
-.home-content {
-  position: relative;
-  margin-left: 5.5em;
-  margin-right: 9em;
-  width: calc(100% - 15.5em);
-  max-width: 1200px;
-  box-sizing: border-box;
-}
-
-@media (max-width: 1024px) {
-  .home-content {
-    margin-left: 4em;
-    margin-right: 4em;
-    width: calc(100% - 8em);
-  }  
-  }
-  @media (max-width: 768px) {
-    .home-content {
-    margin-left: 2em;
-    margin-right: 2em;
-    width: calc(100% - 4em);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .home-content {
-    margin-left: 1em;
-    margin-right: 1em;
-    width: calc(100% - 2em);
-    }
-  }
 
 .home-content > p:last-of-type {
   font-size: clamp(1rem, 3vw, 1.3rem);
@@ -258,9 +225,12 @@ ul.navbar {
 
 
 #photo {
-  width: 100%;
-  max-width: 100%; 
-  transition: all 0.3s ease;
+  width: 70%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
   filter: drop-shadow(0 0 20px #6366f1);
 }
 
@@ -270,14 +240,15 @@ ul.navbar {
 }
 
 .animated-text {
+  width: 0;
   font-family: "JetBrains Mono";
-  font-size: 2.5rem;
   color: white; 
   font-weight: 900;
+  font-size: clamp(1.2rem, 5vw, 2.5rem);
+  max-width: 100%;
   overflow: hidden; 
   border-right: 20px solid #6366f1; 
   white-space: nowrap;
-  padding-right: 15px;
   animation: 
     typing 5s steps(30, end) forwards,
     blink-caret 0.75s step-end infinite;
@@ -432,6 +403,7 @@ svg:last-of-type {
   border-radius: 10px;
   margin: 1rem 0 0;
   border: 3px solid #5b43c4;
+  height: clamp(250px, 40vw, 400px);
   box-shadow: 0 5px 15px rgba(91, 67, 196, 0.3);
 }
 
@@ -459,10 +431,7 @@ svg:last-of-type {
   font-size: 2rem;
   letter-spacing: 1px;
 }
-#formulario form {
-  display: grid;
-  gap: 1.5rem;
-}
+
 
 #formulario > form > textarea{
   grid-column: span 2;
@@ -495,7 +464,7 @@ textarea::placeholder {
 #formulario form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 1rem;
+  gap: 1.5rem;
 }
 #formulario input:focus,
 #formulario textarea:focus {
@@ -529,10 +498,7 @@ textarea::placeholder {
   box-shadow: 0 5px 15px rgba(91, 67, 196, 0.4);
 }
 
-#referencias {
-  margin-top: 3rem;
-  grid-column: 1 / 3;
-}
+
 
 #referencias article {
   background: rgba(28, 22, 46, 0.7);
@@ -575,6 +541,7 @@ textarea::placeholder {
   grid-template-columns: repeat(3, 1fr);
   row-gap: 1rem;
   column-gap: 1rem;
+  grid-column: 1 / 3;
 }
 
 #referencias > h2 {
@@ -591,6 +558,38 @@ textarea::placeholder {
   column-gap: 2.5rem;
   grid-template-columns: 1fr 1fr;
   border-radius: 15px;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+  max-width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-image img:hover {
+  transform: scale(1.05);
+}
+
+
+
+.project-tech img {
+  display: inline;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  background-color: white;
+  border-radius: 0.25rem;
 }
 
 #about h2 {
@@ -663,9 +662,10 @@ p span:last-of-type {
 }
 
 
-#project {
+#projects {
   background-color: transparent;
   padding: 2rem 4rem;
+  display: grid;
   background-color: rgba(28, 22, 46, 0.5);;
   color: white;
   padding: 2rem 4rem;
@@ -676,12 +676,13 @@ p span:last-of-type {
   
 }
 
-#project h2 {
+#projects h2 {
   margin-bottom: 1.5rem;
 }
 
-#project article {
+#projects article {
   display: grid;
+  
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
   row-gap: 4rem;
@@ -736,19 +737,11 @@ tbody{
 }
 
 
-#project p {
+#projects p {
   font-family: "Inter", sans-serif;
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 1rem;
-}
-
-
-.tech-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 0.5rem;
-  transition: transform 0.3s ease;
 }
 
 .btn-code{
@@ -813,7 +806,7 @@ footer {
   font-weight: 900;
   font-family: "JetBrains Mono";
   letter-spacing: 0.15rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
   color:rgb(255, 255, 255);
   opacity: 0.5;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -825,5 +818,127 @@ footer p:last-of-type{
   font-family: "JetBrains Mono";
   letter-spacing: 0.15rem;
   justify-self: end;
+  font-size: 0.80rem;
   
+}
+
+@media (max-width: 768px) {
+
+  #navbar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vh;
+  }
+  #welcome-section{
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-top: 12vh;
+  }
+    #formulario form {
+    grid-template-columns: 1fr;
+  }
+   iframe {
+    width: 100%;
+  }
+  .project-card {
+    padding: 1rem;
+  }
+    
+  table td:first-of-type {
+    grid-template-columns: 1fr;
+  }
+  
+   #about {
+    grid-template-columns: 1fr;
+    width: 90%;
+    padding: 1rem;
+  }
+
+  #welcome-section, #projects {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .home-content h1,p {
+    text-align: start;
+    margin-left: 0;
+  }
+
+  .home-content h3,h1,p {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .home-content h3 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .home-content h1{
+    font-size: 3.2rem;
+  }
+  
+  .animated-text{
+    text-align: center;
+    margin-left: 0;
+    font-size: 1.45rem;
+  }
+
+  footer p{
+    text-align: center;
+  }
+  
+  footer p:nth-of-type(2){
+    text-align: end;
+  }
+
+  #photo{
+    margin-bottom: 1rem;
+  }
+
+  .nav-links{
+    display: none;
+  }
+  
+   #contact {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+   }
+
+  .contactme p{
+    text-align: start;
+  }
+
+  #formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 0.5rem;
+  }
+
+  #formulario input,
+  #formulario textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
+    box-sizing: border-box;
+  }
+
+  #formulario button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  #referencias{
+    display: flex;
+    flex-direction: column;
+  }
 }

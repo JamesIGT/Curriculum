@@ -5,7 +5,7 @@
     <meta name="keywords" content="Currículum, CV, Jared Gonzalez, Experiencia laboral, Educación, Habilidades">
     <meta name="description" content="Currículum vitae de Jared Gonzalez. Información sobre experiencia profesional, formación académica y habilidades.">
     <meta name="author" content="Jared Gonzalez">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="navbar">
+        <nav id="navbar">
+            <ul>
                 <li class="nav-brand">
                     <a>
                         <svg id="nav-logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" fill="#673AB7" 
@@ -29,13 +29,13 @@
                     </a>
                 </li>
                 <div class="nav-links">
-                    <li><a href="#home" class="nav-options">Home</a></li>
+                    <li><a href="#welcome-section" class="nav-options">Home</a></li>
                     <li><a href="#about" class="nav-options">About</a></li>
-                    <li><a href="#project" class="nav-options">Proyects</a></li>
+                    <li><a href="#projects" class="nav-options">Proyects</a></li>
                     <li><a href="#contact" class="nav-options">Contact Me</a></li>
                 </div>
                 <li class="nav-button"> 
-                    <a href="https://github.com/JamesIGT" class="nav-follow" target="_blank" rel="noopener">
+                    <a id="profile-link" href="https://github.com/JamesIGT" class="nav-follow" target="_blank" rel="noopener">
                         Follow Me
                     </a>
                 </li>
@@ -43,7 +43,7 @@
         </nav>        
     </header>
     <main>
-        <section id="home">
+        <section id="welcome-section">
             <div class="home-content"> 
                 <p>Hi World, I'm</p>
                 <h1> Jared Gonzalez</h1>
@@ -228,7 +228,7 @@
                 </table>
             </article>
         </section>
-        <section id="project">
+        <section id="projects">
             <h2 class="title">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="currentColor">
                     <path d="M6 10C6 7.79086 7.79086 6 10 6H18L22 10H38C40.2091 10 42 11.7909 42 14V38C42 40.2091 40.2091 42 38 42H10C7.79086 42 6 40.2091 6 38V10Z" fill="url(#gradienteLila)"/>
@@ -248,7 +248,7 @@
                     </div>
                 </div>
                 <div class="project-content">
-                    <h3>Game Developement</h3>
+                    <h3 class="project-tile">Game Developement</h3>
                     <p>
                         Unknown Titan is a project developed for the NASA Space Apps Challenge that explores the 
                         potential for life on Titan, Saturn’s moon, using simulations and real scientific data analysis.
@@ -270,7 +270,7 @@
             </article>    
             <article class="project-card">
             <div class="project-content">
-                <h3>Game Developement</h3>
+                <h3 class="project-tile">Game Developement</h3>
                 <p>Winner Videogame for the PyWeekend hackathon hosted at ESPOL. Built with the Godot Game Engine</p>
                 <div class="project-links">
                     <a href="#" class="btn-code">
@@ -308,7 +308,7 @@
                 </div>
             </div>
             <div class="project-content">
-                <h3>Prime Number Detector in Assembly</h3>
+                <h3 class="project-tile">Prime Number Detector in Assembly</h3>
                 <p>I developed a program in assembly language that determines whether a given number is prime, 
                     using low-level optimization techniques to enhance numerical analysis performance.
                 </p>
@@ -329,7 +329,7 @@
             </article>
             <article class="project-card">
                 <div class="project-content">
-                    <h3>Development a command-line interface (CLI)</h3>
+                    <h3 class="project-tile">Development a command-line interface (CLI)</h3>
                     <p>I developed a project for the Discrete Mathematics course focused on implementing the RSA algorithm, one of the most important encryption methods in cryptography. 
                         The project included key generation, message encryption and decryption, and a mathematical explanation of how the algorithm works.
                     </p>
@@ -369,7 +369,8 @@
                 <p> 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
-                    </svg> Escuela Superior Politécnica del Litoral, Guayaquil - Ecuador
+                    </svg> 
+                    Escuela Superior Politécnica del Litoral, Guayaquil - Ecuador
                 </p>
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.9122831056047!2d-79.96899473045196!3d-2.1477626997239364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6dcbef9c9389%3A0x5d56a4e07c5dbcef!2sESPOL%20-%20Escuela%20Superior%20Polit%C3%A9cnica%20del%20Litoral!5e0!3m2!1ses!2sec!4v1716127151234!5m2!1ses!2sec" 
@@ -434,7 +435,6 @@
                 </article>
             </div>
         </section>
-
     </main>
     <footer>
         <p>&copy; 2025 Jared  Gonzalez| Portfolio. All rights reserved. Privacy PolicyTerms of Service.</p>
